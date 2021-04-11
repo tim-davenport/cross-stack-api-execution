@@ -74,6 +74,7 @@ functions:
       - http:
           path: hello-two
           method: get
+          authorizer: aws_iam
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
