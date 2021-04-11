@@ -14,7 +14,7 @@ module.exports.hello = async (event) => {
     axios.interceptors.request.use(interceptor);
 
     resp = await axios.get(
-      "https://a9781ft3el.execute-api.us-east-1.amazonaws.com/dev/hello-two"
+      "https://jysmlsc660.execute-api.us-east-1.amazonaws.com/dev/hello-two"
     );
 
     return {
@@ -25,7 +25,8 @@ module.exports.hello = async (event) => {
   } catch (error) {
     return {
       statusCode: 400,
-      body: error.response.headers,
+      body: error,
+      headers: error.response.headers,
       env: JSON.stringify(process.env)
     };
   }
